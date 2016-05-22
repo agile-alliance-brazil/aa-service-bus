@@ -1,0 +1,18 @@
+<h2>Agile Alliance Service Bus</h2>
+
+<div class="content">
+  <p>
+    Welcome to the Agile Alliance Service Bus! If you're seeing this page, then the application is running
+    as expected.
+  </p>
+</div>
+
+<div class="sidebar">
+  <h3>Environment</h3>
+  <ul>
+    <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+    <li><b>Environment:</b> <%= ENV['RACK_ENV'] %></li>
+    <li><b>Server:</b> <%= @env['SERVER_SOFTWARE'] %></li>
+    <li><b>Port:</b> <%= @env['SERVER_PORT'] %></li>
+  </ul>
+</div>
