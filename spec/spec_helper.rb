@@ -11,6 +11,10 @@ SimpleCov.command_name 'RSpec'
 
 require './config/environment'
 require 'rack/test'
+require 'tilt/erubis'
+require 'webmock/rspec'
+
+Dir[File.dirname(__FILE__) + '/../app/**/*.rb'].each { |file| require file }
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
@@ -24,11 +28,8 @@ RSpec.configure do |config|
   end
 
   config.disable_monkey_patching!
-
   config.warnings = true
-
   config.default_formatter = 'doc' if config.files_to_run.one?
-
   config.order = :random
 
   Kernel.srand config.seed

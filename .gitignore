@@ -17,7 +17,7 @@ examples.txt
 coverage/*
 # Ignore application configuration
 /config/application.yml
-config/config.yml
+config/application.yml
 public/uploads/
 logfile
 .ruby-gemset
