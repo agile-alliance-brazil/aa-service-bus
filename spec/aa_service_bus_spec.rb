@@ -25,8 +25,8 @@ RSpec.describe AaServiceBus do
         context 'and the user is a member' do
           subject(:body) { last_response.body }
           it 'responds true' do
-            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/api/").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?><data><result>1</result></data>', headers: {})
-            get '/check_member/foo@bar.com', {}, 'HTTP_AUTHORIZATION' => 'xpto'
+            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/check-membership").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?><data><result>1</result></data>', headers: {})
+            get '/check_member/foo@bar.com', {}, 'HTTP_AUTHORIZATION' => ENV['AA_API_TOKEN']
             expect(last_response.status).to eq 200
             expect(JSON.parse(body)['member']).to be_truthy
           end
@@ -35,8 +35,8 @@ RSpec.describe AaServiceBus do
         context 'and the user is not a member' do
           subject(:body) { last_response.body }
           it 'responds false' do
-            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/api/").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?><data><result>0</result></data>', headers: {})
-            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => 'xpto'
+            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/check-membership").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?><data><result>0</result></data>', headers: {})
+            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => ENV['AA_API_TOKEN']
             expect(last_response.status).to eq 200
             expect(JSON.parse(body)['member']).to be_falsey
           end
@@ -45,8 +45,8 @@ RSpec.describe AaServiceBus do
         context 'and the service returned no node <result>' do
           subject(:body) { last_response.body }
           it 'responds false' do
-            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/api/").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?><data></data>', headers: {})
-            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => 'xpto'
+            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/check-membership").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?><data></data>', headers: {})
+            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => ENV['AA_API_TOKEN']
             expect(last_response.status).to eq 200
             expect(JSON.parse(body)['member']).to be_falsey
           end
@@ -54,8 +54,8 @@ RSpec.describe AaServiceBus do
         context 'and the service returned no node <data>' do
           subject(:body) { last_response.body }
           it 'responds false' do
-            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/api/").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?>', headers: {})
-            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => 'xpto'
+            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/check-membership").to_return(status: 200, body: '<?xml version=\"1.0\" encoding=\"UTF-8\"?>', headers: {})
+            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => ENV['AA_API_TOKEN']
             expect(last_response.status).to eq 200
             expect(JSON.parse(body)['member']).to be_falsey
           end
@@ -68,8 +68,8 @@ RSpec.describe AaServiceBus do
         context 'and the user is a member' do
           it 'verifies on CSV file and returns true' do
             expect(File).to receive(:read) { file }
-            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/api/").to_raise(Net::OpenTimeout)
-            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => 'xpto'
+            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/check-membership").to_raise(Net::OpenTimeout)
+            get '/check_member/bla@xpto.com', {}, 'HTTP_AUTHORIZATION' => ENV['AA_API_TOKEN']
             expect(last_response.status).to eq 200
             expect(JSON.parse(body)['member']).to be_truthy
           end
@@ -77,8 +77,8 @@ RSpec.describe AaServiceBus do
         context 'and the user is not a member' do
           it 'verifies on CSV file and returns false' do
             expect(File).to receive(:read) { file }
-            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/api/").to_raise(Net::OpenTimeout)
-            get '/check_member/foo@bar.com', {}, 'HTTP_AUTHORIZATION' => 'xpto'
+            WebMock.stub_request(:post, "#{ENV['AA_API_HOST']}/check-membership").to_raise(Net::OpenTimeout)
+            get '/check_member/foo@bar.com', {}, 'HTTP_AUTHORIZATION' => ENV['AA_API_TOKEN']
             expect(last_response.status).to eq 200
             expect(JSON.parse(body)['member']).to be_falsey
           end

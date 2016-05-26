@@ -17,11 +17,7 @@ class AaServiceBus < Sinatra::Base
   get '/check_member/:email' do
     content_type :json
     return 401 unless authorized?
-    if AgileAllianceService.aa_member?(params['email'], api_token)
-      { member: true }.to_json
-    else
-      { status: 200, member: false }.to_json
-    end
+    { status: 200, member: AgileAllianceService.aa_member?(params['email'], api_token) }.to_json
   end
 
   private
@@ -33,6 +29,6 @@ class AaServiceBus < Sinatra::Base
   end
 
   def api_token
-    @api_token ||= ENV['API_TOKEN']
+    @api_token ||= ENV['AA_API_TOKEN']
   end
 end

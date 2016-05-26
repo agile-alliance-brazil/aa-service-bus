@@ -5,6 +5,7 @@ ruby '2.3.1'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'nokogiri'
+gem 'httparty'
 
 group :test, :development do
   gem 'rspec'

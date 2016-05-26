@@ -13,10 +13,14 @@ GEM
     docile (1.1.5)
     dotenv (2.1.1)
     hashdiff (0.3.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     json (1.8.3)
     mini_portile2 (2.0.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    multi_xml (0.5.5)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     parser (2.3.1.0)
@@ -82,6 +86,7 @@ DEPENDENCIES
   brakeman
   codeclimate-test-reporter
   dotenv
+  httparty
   minitest (~> 5.2)
   nokogiri
   rack-test (~> 0.6)
