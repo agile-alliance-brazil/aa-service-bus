@@ -11,6 +11,7 @@ GEM
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    dotenv (2.1.1)
     hashdiff (0.3.0)
     json (1.8.3)
     mini_portile2 (2.0.0)
@@ -80,6 +81,7 @@ PLATFORMS
 DEPENDENCIES
   brakeman
   codeclimate-test-reporter
+  dotenv
   minitest (~> 5.2)
   nokogiri
   rack-test (~> 0.6)

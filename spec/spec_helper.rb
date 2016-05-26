@@ -9,6 +9,9 @@ SimpleCov.start 'rails' do
 end
 SimpleCov.command_name 'RSpec'
 
+require 'dotenv'
+Dotenv.load
+
 require './config/environment'
 require 'rack/test'
 require 'tilt/erubis'

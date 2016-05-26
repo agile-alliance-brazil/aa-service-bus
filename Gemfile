@@ -13,6 +13,7 @@ group :test, :development do
   gem 'simplecov', require: false
   gem 'codeclimate-test-reporter', require: nil
   gem 'brakeman'
+  gem 'dotenv'
 end
 
 group :development do

@@ -21,3 +21,4 @@ config/application.yml
 public/uploads/
 logfile
 .ruby-gemset
+.env

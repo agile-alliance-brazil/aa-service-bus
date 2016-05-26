@@ -4,7 +4,10 @@ require 'csv'
 class AgileAllianceService
   def self.aa_member?(email, api_token)
     params = "<?xml version='1.0' encoding='UTF-8'?><data><api_key>#{api_token}</api_key><email>#{email}</email></data>"
-    response = Net::HTTP.new('cf.agilealliance.org').post('/api/', params)
+    http = Net::HTTP.new(ENV['AA_API_HOST'])
+    http.open_timeout = 5
+    http.read_timeout = 5
+    response = http.post('/api/', params)
     hash = Nokogiri.parse(response.body)
     return true if hash && hash.at('data') && hash.at('data').at('result').try(:text) == '1'
     false
