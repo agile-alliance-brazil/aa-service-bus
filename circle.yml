@@ -1,0 +1,11 @@
+deployment:
+  production:
+    branch: master
+    commands:
+      - git push git@heroku.com:aa-service-bus.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app aa-service-bus
+
+test:
+  post:
+    - bundle exec brakeman
+    - bundle exec rubocop -R

@@ -15,6 +15,7 @@ group :test, :development do
   gem 'codeclimate-test-reporter', require: nil
   gem 'brakeman'
   gem 'dotenv'
+  gem 'brakeman', require: false
 end
 
 group :development do
