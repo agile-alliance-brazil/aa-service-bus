@@ -9,6 +9,11 @@ SimpleCov.start 'rails' do
 end
 SimpleCov.command_name 'RSpec'
 
+unless ENV['CIRCLE_BRANCH'].nil?
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+end
+
 require 'dotenv'
 Dotenv.load
 
