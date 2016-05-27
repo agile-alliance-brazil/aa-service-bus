@@ -19,7 +19,6 @@ Dotenv.load
 
 require './config/environment'
 require 'rack/test'
-require 'tilt/erubis'
 require 'webmock/rspec'
 
 Dir[File.dirname(__FILE__) + '/../app/**/*.rb'].each { |file| require file }

@@ -12,16 +12,14 @@ group :test, :development do
   gem 'rspec-collection_matchers'
   gem 'rubocop'
   gem 'simplecov', require: false
-  gem 'codeclimate-test-reporter', require: nil
-  gem 'brakeman'
   gem 'dotenv'
   gem 'brakeman', require: false
 end
 
 group :development do
-  gem 'rake', '~> 10.0'
-  gem 'minitest', '~> 5.2'
-  gem 'rack-test', '~> 0.6'
+  gem 'rake'
+  gem 'minitest'
+  gem 'rack-test'
 end
 
 group :test do
