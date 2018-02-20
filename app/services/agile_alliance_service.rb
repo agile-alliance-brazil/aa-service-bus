@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'csv'
 
 class AgileAllianceService
@@ -6,11 +7,10 @@ class AgileAllianceService
     response = request_information(api_token, email)
     if response.code == '200'
       hash = Nokogiri.parse(response.body)
-      hash && hash.at('data') && hash.at('data').at('result').try(:text) == '1'
+      hash&.at('data') && hash.at('data').at('result').try(:text) == '1'
     else
       check_csv(email)
     end
-
   rescue Net::OpenTimeout
     check_csv(email)
   end

@@ -36,3 +36,7 @@ Metrics/AbcSize:
     - 'app/routes/**/*'
     - 'db/migrate/**/*'
   Max: 17.5
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'

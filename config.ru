@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 # Load path and gems/bundler
-$LOAD_PATH << File.expand_path(File.dirname(__FILE__))
+$LOAD_PATH << __dir__
 
 require 'bundler'
 Bundler.require
