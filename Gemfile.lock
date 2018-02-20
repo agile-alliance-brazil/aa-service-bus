@@ -6,8 +6,6 @@ GEM
     ast (2.4.0)
     backports (3.11.1)
     brakeman (4.1.1)
-    codeclimate-test-reporter (1.0.7)
-      simplecov
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.3)
@@ -89,7 +87,6 @@ PLATFORMS
 
 DEPENDENCIES
   brakeman
-  codeclimate-test-reporter
   dotenv
   httparty
   minitest
