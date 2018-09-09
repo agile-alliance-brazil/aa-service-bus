@@ -26,6 +26,9 @@ Style/Documentation:
 Rails/HasAndBelongsToMany:
   Enabled: false
 
+Rails/HttpPositionalArguments:
+  Enabled: false # This won't work due to an rspec bug
+
 Metrics/MethodLength:
   Exclude:
     - 'app/routes/**/*'
