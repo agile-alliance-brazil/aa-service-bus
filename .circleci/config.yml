@@ -7,7 +7,7 @@ jobs:
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       RACK_ENV: 'test'
     docker:
-    - image: circleci/ruby:2.3.1
+    - image: circleci/ruby:2.5.1
     steps:
     - checkout
     - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
