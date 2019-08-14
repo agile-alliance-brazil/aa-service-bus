@@ -4,7 +4,7 @@ ruby '2.5.1'
 
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'nokogiri'
+gem 'nokogiri', '>= 1.10.4'
 gem 'httparty'
 
 group :test, :development do
