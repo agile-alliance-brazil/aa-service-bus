@@ -2,8 +2,8 @@ source 'https://rubygems.org/'
 
 ruby '2.5.1'
 
-gem 'sinatra'
-gem 'sinatra-contrib'
+gem 'sinatra', '>= 2.0.3'
+gem 'sinatra-contrib', '>= 2.0.3'
 gem 'nokogiri', '>= 1.10.5'
 gem 'httparty'
 
@@ -19,7 +19,7 @@ end
 group :development do
   gem 'rake'
   gem 'minitest'
-  gem 'rack-test'
+  gem 'rack-test', '>= 1.1.0'
 end
 
 group :test do
