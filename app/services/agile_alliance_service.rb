@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'csv'
+require 'active_support'
+require 'active_support/core_ext/object'
 
 class AgileAllianceService
   def self.aa_member?(email, api_token)
