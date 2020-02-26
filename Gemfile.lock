@@ -29,7 +29,7 @@ GEM
     multi_json (1.14.1)
     multi_xml (0.6.0)
     mustermann (1.0.3)
-    nokogiri (1.10.5)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     parallel (1.12.1)
     parser (2.5.1.2)
@@ -104,7 +104,7 @@ DEPENDENCIES
   dotenv
   httparty
   minitest
-  nokogiri (>= 1.10.5)
+  nokogiri (>= 1.10.8)
   rack-test (>= 1.1.0)
   rake
   rspec
