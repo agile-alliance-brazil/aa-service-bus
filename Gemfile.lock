@@ -104,7 +104,7 @@ DEPENDENCIES
   dotenv
   httparty
   minitest
-  nokogiri (>= 1.10.5)
+  nokogiri (>= 1.10.8)
   rack-test (>= 1.1.0)
   rake
   rspec
