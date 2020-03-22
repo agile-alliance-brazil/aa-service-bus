@@ -33,7 +33,7 @@ jobs:
     - run: ./cc-test-reporter before-build
     - run: bundle exec rspec; ./cc-test-reporter after-build --exit-code $?
     - run: bundle exec brakeman
-    - run: bundle exec rubocop -R
+    - run: bundle exec rubocop
     - store_test_results:
         path: /tmp/circleci-test-results
     - store_artifacts:
