@@ -14,20 +14,11 @@ AllCops:
     - 'Gemfile.lock'
     - !ruby/regexp /old_and_unused\.rb$/
 
-Rails:
-  Enabled: true
-
 Metrics/LineLength:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
-
-Rails/HasAndBelongsToMany:
-  Enabled: false
-
-Rails/HttpPositionalArguments:
-  Enabled: false # This won't work due to an rspec bug
 
 Metrics/MethodLength:
   Exclude:
