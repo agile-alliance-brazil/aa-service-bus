@@ -10,7 +10,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
-    backports (3.17.0)
+    backports (3.17.2)
     brakeman (4.8.0)
     concurrent-ruby (1.1.6)
     crack (0.4.3)
@@ -41,7 +41,7 @@ GEM
     parser (2.7.0.5)
       ast (~> 2.4.0)
     public_suffix (4.0.3)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -119,8 +119,8 @@ DEPENDENCIES
   rspec-collection_matchers
   rubocop
   simplecov (>= 0.16.1, < 0.18)
-  sinatra (>= 2.0.3)
-  sinatra-contrib (>= 2.0.3)
+  sinatra (>= 2.0.8.1)
+  sinatra-contrib (>= 2.0.8.1)
   webmock
 
 RUBY VERSION
