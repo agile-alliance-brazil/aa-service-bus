@@ -4,7 +4,7 @@ ruby '2.5.1'
 
 gem 'sinatra', '>= 2.0.3'
 gem 'sinatra-contrib', '>= 2.0.3'
-gem 'nokogiri', '>= 1.10.8'
+gem 'nokogiri', '>= 1.11.0'
 gem 'activesupport', '>= 6.0.3.1'
 gem 'httparty'
 
