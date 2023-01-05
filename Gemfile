@@ -6,7 +6,7 @@ gem 'sinatra', '>= 2.0.3'
 gem 'sinatra-contrib', '>= 2.0.3'
 gem 'nokogiri', '>= 1.11.0'
 gem 'activesupport', '>= 6.0.3.1'
-gem 'httparty'
+gem 'httparty', '>= 0.21.0'
 
 group :test, :development do
   gem 'rspec'
