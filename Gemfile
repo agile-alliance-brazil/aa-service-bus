@@ -2,8 +2,8 @@ source 'https://rubygems.org/'
 
 ruby '3.0.1'
 
-gem 'sinatra', '>= 2.0.3'
-gem 'sinatra-contrib', '>= 2.0.3'
+gem 'sinatra', '>= 2.1.0'
+gem 'sinatra-contrib', '>= 2.1.0'
 gem 'nokogiri', '>= 1.11.0'
 gem 'activesupport', '>= 6.0.3.1'
 gem 'httparty'
