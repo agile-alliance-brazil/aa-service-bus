@@ -11,7 +11,7 @@ gem 'httparty'
 group :test, :development do
   gem 'rspec'
   gem 'rspec-collection_matchers'
-  gem 'rubocop'
+  gem 'rubocop', '>= 0.80.1'
   gem 'simplecov', '>= 0.16.1', '< 0.18', require: false
   gem 'dotenv'
   gem 'brakeman', require: false
